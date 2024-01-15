@@ -1,0 +1,289 @@
+/* Calcolatrice Gravidanza by Armando "FL3R" Fiore */
+
+/* Font Nunito-Regular (OFL): https://fonts.google.com/specimen/Nunito */
+@font-face {
+  font-family: 'Nunito-Regular';
+  src: url('Nunito-Regular.ttf') format('truetype');
+}
+
+/* Applica lo sfondo gradient al testo */
+.text-gradient, h2 {
+  background-image: linear-gradient(45deg, #f906cc 25%, #f93306);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  display: inline;
+}
+
+body {
+  font-family: 'Nunito-Regular', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #1f2650;
+  background: #e4d5c3;
+  font-size: 20px;
+  line-height: 1.5;
+  font-size: 1.4em;
+}
+
+p {
+	margin-top: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.social {
+    float: right;
+    width: 50%;
+    text-align: right;
+    margin-right: 40px;
+}
+
+a.social-item {
+    text-decoration: none;
+	margin-right: 20px;
+}
+
+/* Stile fluent per l'intestazione */
+h1 {
+  font-size: 2em;
+}
+
+/* Contenitore principale del calcolatore */
+#calculator {
+  margin: 20px auto;
+  padding: 20px 40px;
+  max-width: 90%;
+  border: 1px solid #e4d4c1;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  background-image: linear-gradient(45deg, #f906cc 25%, #f93306);
+  background-size: 100% 10px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  padding-bottom: 10px;
+}
+
+/* Stile coerente per le etichette */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.calculator-input {
+	zoom: 1.2;
+	margin-top:0
+}
+
+/* Input e select */
+input[type="date"],
+select {
+	width: 25%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+/* Al passaggio del mouse, cambia il colore dei bordi e lo sfondo */
+input[type="date"]:focus,
+select:focus {
+  border-color: #0078d4;
+  background-color: #fff;
+  outline: none;
+}
+
+/* Pulsante in stile Fluent */
+button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(45deg, #f906cc 25%, #f93306);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 1s;
+  max-width: 100px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #f93306 25%, #f906cc);
+}
+
+/* Stile per pulsante disabilitato */
+button[disabled] {
+  background: #f5e7d8;
+  cursor: not-allowed;
+}
+
+/* Stile risultato */
+#result {
+  margin-top: 20px;
+  display: none;
+}
+
+/* Immagine di rischio */
+#riskImage {
+  max-width: 100%;
+  margin-top: 15px;
+}
+
+/* Stile per dispositivi mobili */
+@media screen and (max-width: 600px) {
+  #calculator {
+    width: 100%;
+    padding: 15px;
+  }
+}
+img#x-symbol {
+  float: right;
+  cursor: pointer;
+  width: 20px;
+  margin-top: 20px;
+}
+img#fetalImage, img#dueDateImage, img#pregnancyWeekImage {
+	max-width:128px;
+}
+#dueDateImage {
+  animation: bounce 1s infinite alternate;
+  transform-origin: center bottom;
+}
+
+@keyframes bounce {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(0, -10px);
+  }
+}
+
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(-10deg);
+    transform-origin: center bottom;
+  }
+  50% {
+    transform: rotate(10deg);
+    transform-origin: center bottom;
+  }
+}
+
+img#fetalImage {
+  animation: swing 3s infinite ease-in-out;
+}
+.result-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.result-column {
+  width: calc(33.33% - 10px);
+  margin: 5px;
+  text-align: center;
+}
+
+.result-image {
+  max-width: 100%;
+}
+
+.result-text {
+  margin-top: 10px;
+}
+@media screen and (max-width: 768px) {
+  .result-column {
+    width: 100%;
+  }
+}
+.hidden {
+  display: none;
+}
+
+.share-image {
+  width: 512px;
+  height: 512px;
+  padding: 40px;
+  box-sizing: border-box;
+  background:url("share-background.png") bottom no-repeat #F3F4F5;
+  background-size: contain;
+  position: absolute;
+  left: -600px;
+  top: 0px;
+}
+
+.share-progress-bar {
+	width: 100%;
+    height: 5px;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(45deg, #065af9 25%, #06aef9);
+  width: 0; /* Inizialmente la larghezza è 0 */
+  transition: width 0.3s; /* Aggiungi una transizione per animare la larghezza */
+}
+
+.share-image-week {
+    font-size: 96px;
+    font-weight: bold;
+	color: #065af9;
+    line-height: 1;
+    margin-top: 40px;
+  display: inline;
+}
+p.share-image-week-text {
+    font-size: 1.75em;
+	color: #065af9;
+    line-height: 1;
+  display: inline;
+}
+
+/* Stile del banner di condivisione */
+.share-banner {
+    text-align: left;
+    padding: 40px;
+    background: url(share-background.png) bottom right no-repeat #F3F4F5;
+    background-size: cover;
+    border-radius: 5px;
+    margin: 40px 0 20px 0;
+}
+.share-banner-h2 {
+	 background: linear-gradient(45deg, #065af9 25%, #06aef9);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  display: inline;
+}
+/* Pulsante in stile Fluent */
+#shareButton {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(45deg, #065af9 25%, #06aef9);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 1s;
+  max-width: 200px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+#shareButton:hover {
+  background: linear-gradient(45deg, #06aef9 25%, #065af9);
+}

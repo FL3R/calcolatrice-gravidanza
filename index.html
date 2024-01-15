@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calcolatrice Gravidanza: Strumento completo per le future mamme">
+    <meta name="keywords" content="calcolatrice, settimana di gravidanza, gravidanza, future mamme, data ultime mestruazioni">
+    <meta name="author" content="Armando ''FL3R'' Fiore">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Calcolatrice Gravidanza">
+    <meta property="og:description" content="Strumento completo per le future mamme per tenere traccia della gravidanza">
+    <meta property="og:image" content="social-image.png">
+    <meta property="og:url" content="https://www.guarinolab.it/calcolatrice-gravidanza">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@GuarinoLab">
+    <meta name="twitter:title" content="Calcolatrice Gravidanza">
+    <meta name="twitter:description" content="Strumento completo per le future mamme per tenere traccia della gravidanza">
+    <meta name="twitter:image" content="social-image.png">
+    <title>Calcolatrice Gravidanza</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="html2canvas.min.js"></script>
+</head>
+<body>
+    <div id="calculator">
+        <div id="resetButton" onclick="resetCalculator()">
+            <img id="x-symbol" src="x-symbol.svg" alt="Chiudi la calcolatrice">
+        </div>
+		<div class="social">
+            <a class="social-item" href="https://x.com/Armando_Fiore">
+              <img src="x.svg" alt="X">
+            </a>
+            <a class="social-item" href="https://github.com/FL3R/calcolatrice-gravidanza">
+              <img src="github.svg" alt="GitHub">
+            </a>
+            <button class="button">
+              <span>
+                <img src="paypal.svg" alt="PayPal">
+              </span>
+              <span>
+                <a href="https://www.paypal.com/paypalme/fl3r">Donate</a>
+              </span>
+            </button>
+          </div>
+        <h1>Benvenuta <span class="text-gradient">futura mamma</span>!</h1>
+        <p>Questa calcolatrice è lo strumento più semplice e completo per le future mamme che desiderano tenere traccia dei progressi della loro gravidanza. Ti basta inserire la data delle ultime mestruazioni e la calcolatrice ti fornirà informazioni dettagliate sulla settimana attuale di gravidanza, inclusi il numero esatto di settimane e giorni, la data presunta del parto e tanto altro ancora, come curiosità, suggerimenti ed esami consigliati per ogni fase della gravidanza.</p>
+		<p>❤️ Questa app è stata sviluppata da Armando "FL3R" Fiore</p>
+        <label for="lastPeriodDate">Data dell'ultima mestruazione:</label>
+        <p class="calculator-input">
+            <input type="date" id="lastPeriodDate">
+            <button onclick="calculatePregnancyWeek()" id="calculateButton" disabled onchange="validateInput()">Calcola</button>
+        </p>
+        <p id="alternateMessage" class="hidden">La data inserita è troppo anteriore o posteriore a quella odierna.</p>
+        <div id="result">
+            <div class="result-top">
+                <div class="result-column">
+                    <img id="pregnancyWeekImage" src="pregnancyWeekImage.svg" alt="Data del parto">
+                    <p class="result-text">
+                        <span id="pregnancyWeekValue"></span>ª settimana
+                    </p>
+                </div>
+                <div class="result-column">
+                    <img id="dueDateImage" src="dueDate.svg" alt="Data del parto">
+                    <p class="result-text">
+                        <span id="dueDateValue"></span>
+                    </p>
+                </div>
+                <div class="result-column">
+                    <img id="fetalImage" src="" alt="Grandezza feto">
+                    <p class="result-text">Grandezza feto</p>
+                </div>
+            </div>
+            <h2>Risultato</h2>
+            <p>Oggi ti trovi nella <span id="pregnancyWeek"></span>ª settimana di gravidanza. Più precisamente sei nella <span id="pregnancyWeekValueAndDays"></span>. Tieni a mente questo valore, ti verrà chiesto per alcuni esami.</p>
+            <p>La data presunta del parto basata sulle ultime mestruazioni è il <span id="dueDate"></span>. Mancano <span id="daysToDueDate"></span> giorni al lieto evento!</p>
+            <h2>Mamma</h2>
+            <p id="mom"></p>
+            <h2>Il tuo bambino</h2>
+            <p id="description"></p>
+            <h2>Curiosità</h2>
+            <p id="tips"></p>
+            <h2>Esami consigliati</h2>
+            <p id="exams"></p>
+            <!-- Banner di condivisione -->
+            <div id="shareBanner" class="share-banner">
+                <div class="share-banner-content">
+                    <h2 class="share-banner-h2">Condividi i tuoi risultati!</h2>
+                    <p>Sei pronta a condividere questo viaggio straordinario? Clicca sul pulsante e celebra questo momento speciale!</p>
+                    <button id="shareButton" onclick="shareImage()"><div class="wave"></div><span>Condividi ora!</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="shareImage" class="share-image">
+        <div class="share-image-week">
+            <span id="sharePregnancyWeekValue"></span>ª
+        </div>
+        <br>
+        <p class="share-image-week-text">settimana di gravidanza</p>
+        <p>La data presunta del parto è il <span id="shareDueDateValue"></span></p>
+        <div class="share-progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+        <p>Mancano <span id="shareDaysRemaining"></span> giorni al lieto evento!</p>
+        <p><span id="shareFruit"></span></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
