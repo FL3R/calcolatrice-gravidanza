@@ -1,4 +1,4 @@
-![Bra Perfect Logo](https://github.com/FL3R/bra-perfect/blob/master/images/logo.png?raw=true)
+![Calcolatrice Gravidanza Logo](https://raw.githubusercontent.com/FL3R/calcolatrice-gravidanza/main/favicon.png)
 # Calcolatrice Gravidanza
 
 Benvenuta futura mamma! 🤰
