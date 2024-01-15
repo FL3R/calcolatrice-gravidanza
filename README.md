@@ -1,4 +1,4 @@
-![Calcolatrice Gravidanza Logo](https://github.com/FL3R/calcolatrice-gravidanza/blob/master/favicon.png?raw=true)
+![Calcolatrice Gravidanza Logo](https://raw.githubusercontent.com/FL3R/calcolatrice-gravidanza/main/favicon.png)
 # Calcolatrice Gravidanza
 
 Benvenuta futura mamma! 🤰
