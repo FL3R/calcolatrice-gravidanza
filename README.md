@@ -5,6 +5,10 @@ Benvenuta futura mamma! 🤰
 
 La Calcolatrice Gravidanza è uno strumento completo e interattivo per seguire e condividere il tuo straordinario viaggio di maternità settimana dopo settimana.
 
+## Demo
+
+La demo è disponibile online [qui](https://fl3r.github.io/calcolatrice-gravidanza/).
+
 ## Funzionalità Principali
 - Calcolo Settimanale: Inserisci la data delle ultime mestruazioni e ottieni informazioni dettagliate sulla settimana attuale di gravidanza.
 - Dettagli sulla Gravidanza: Scopri il numero esatto di settimane e giorni, la data presunta del parto, e molto altro.
